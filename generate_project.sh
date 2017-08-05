@@ -1,20 +1,25 @@
 
 #!/bin/bash
 
-if [ $# -eq 0 ] ; then
-    echo "usage: ./generate_project.sh target_dir"
+if [ $# -ne 2 ] ; then
+    echo "usage: ./generate_project.sh src_dir target_dir"
     exit -1
 fi
 
-if [ -d $1 ] ; then
-    echo "error: $1 already exists"
+if [ ! -d $1 ] ; then
+    echo "error: $1 not found"
+    exit -1
+fi
+
+if [ -d $2 ] ; then
+    echo "error: $2 already exists"
     exit -1
 fi
 
 echo "copying template ..."
 
-DEST_DIR=$1
-SRC_DIR=./reference_project
+SRC_DIR=$1
+DEST_DIR=$2
 
 mkdir $DEST_DIR
 

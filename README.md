@@ -7,5 +7,5 @@
 
 * to generate a simple project in folder `foo`:
 ```
-./generate_project.sh reference_project_01_simple foo
+./generate_project.sh ref_project_01_simple foo
 ```

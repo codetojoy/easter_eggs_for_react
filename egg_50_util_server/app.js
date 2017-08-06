@@ -4,9 +4,13 @@
 const express = require('express')
 const app = express()
 const profiles = require('./data/profiles.json')
+const cors = require('cors')
+
+app.use(cors())
 
 app.use(function (req, res, next) {
     console.log("TRACER incoming url: " + req.url)
+
     next()
 })
 
